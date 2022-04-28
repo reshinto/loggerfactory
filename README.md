@@ -1,8 +1,8 @@
-# LOGGERSFACTORY
+# LOGGINGFACTORY
 
 ## Installation
 
-> pip install loggersfactory16
+> pip install loggingfactory
 
 ## Usage
 
