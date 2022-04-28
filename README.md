@@ -1,15 +1,15 @@
-# LOGGINGFACTORY
+# LOGGINGSFACTORY
 
 ## Installation
 
-> pip install loggingfactory
+> pip install loggingsfactory
 
 ## Usage
 
 ### Import
 
 ```python
-from loggersfactory.logging import Loggers
+from loggingsfactory.logging import Loggers
 ```
 
 ### Initialization
