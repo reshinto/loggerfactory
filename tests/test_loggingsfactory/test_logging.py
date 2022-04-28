@@ -1,10 +1,10 @@
 import pytest
 from elasticsearch import Elasticsearch, AsyncElasticsearch
 from loguru import logger
-from src.loggersfactory.loggers.asyncelk import AsyncElk
-from src.loggersfactory.loggers.elk import Elk
-from src.loggersfactory.loggers.loguru import Loguru
-from src.loggersfactory.logging import Loggers
+from src.loggingsfactory.loggers.asyncelk import AsyncElk
+from src.loggingsfactory.loggers.elk import Elk
+from src.loggingsfactory.loggers.loguru import Loguru
+from src.loggingsfactory.logging import Loggers
 
 
 def test_loggers_loguru_missing_appname():

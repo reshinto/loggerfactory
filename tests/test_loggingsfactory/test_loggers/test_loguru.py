@@ -1,6 +1,6 @@
 import json
 import pytest
-from src.loggersfactory.loggers.loguru import Loguru
+from src.loggingsfactory.loggers.loguru import Loguru
 
 
 def test_loguru_init_missing_appname_key():

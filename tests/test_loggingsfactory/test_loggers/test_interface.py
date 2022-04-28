@@ -1,5 +1,5 @@
 import pytest
-from src.loggersfactory.loggers.interface import LoggerInterface
+from src.loggingsfactory.loggers.interface import LoggerInterface
 
 
 def test_loggerinterface_abstract_methods_undeclared():

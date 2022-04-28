@@ -1,7 +1,7 @@
 from datetime import datetime
 import json
 import pytest
-from src.loggersfactory.helpers.formats import (
+from src.loggingsfactory.helpers.formats import (
     _format_log_data,
     check_log_level,
     check_log_level_type,

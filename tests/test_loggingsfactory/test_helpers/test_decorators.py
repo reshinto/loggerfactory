@@ -1,4 +1,4 @@
-from src.loggersfactory.helpers.decorators import (
+from src.loggingsfactory.helpers.decorators import (
     connect_async_elk,
     connect_elk,
     print_retry_exception_msg,
