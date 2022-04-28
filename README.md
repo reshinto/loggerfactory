@@ -36,7 +36,7 @@ from loggingsfactory.logging import Loggers
     )
   ```
 
-#### Elasticseach
+#### Elasticsearch
 
 ```python
 loggers = Loggers(
@@ -49,7 +49,7 @@ loggers = Loggers(
   )
 ```
 
-#### AsyncElasticseach
+#### AsyncElasticsearch
 
 ```python
 loggers = Loggers(
