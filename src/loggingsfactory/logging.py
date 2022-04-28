@@ -1,4 +1,4 @@
-"""Logging Factory class that generates Loguru, Elasticseach, or AsyncElasticsearch class"""
+"""Logging Factory class that generates Loguru, Elasticsearch, or AsyncElasticsearch class"""
 from typing import Union
 
 from .constants.keys import LoggerKeys
