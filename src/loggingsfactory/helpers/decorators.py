@@ -2,11 +2,11 @@
 import functools
 from types import FunctionType
 from typing import Any, Dict, List
+from loguru import logger
 from elasticsearch import Elasticsearch, AsyncElasticsearch
 
 from ..constants.config import BasicConfig, BoolConfig
 from ..helpers.formats import format_elk_url
-from ..helpers.singletons import logger
 
 
 def print_retry_exception_msg(

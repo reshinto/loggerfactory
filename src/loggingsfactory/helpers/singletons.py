@@ -1,5 +1,4 @@
 """Keep track of total number of logs called"""
-import loguru
 
 
 class LogCounter:
@@ -19,21 +18,3 @@ class LogCounter:
 
 
 logcounter = LogCounter()
-
-
-class SetupLoguru:
-    """Setup loguru library"""
-
-    def __init__(self) -> None:
-        """
-        - self.logger: loguru.Logger = this is the Loguru library logger instance.
-
-        - self.logger.add("logs/logfile.log") = this auto creates the log folder and logfile.log inside it.
-                                                auto creation happens when the logger is initialized,
-                                                or when unit tests are run.
-        """
-        self.logger: loguru.Logger = loguru.logger
-        self.logger.add("logs/logfile.log")
-
-
-logger = SetupLoguru().logger
