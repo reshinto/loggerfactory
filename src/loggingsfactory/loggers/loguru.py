@@ -1,8 +1,7 @@
 """Loguru library wrapper"""
 from typing import Any, Dict, Optional, Union
-import loguru
-from loguru import logger
 
+from ..helpers.singletons import logcounter, logger
 from ..constants.config import LogLevels
 from ..helpers.formats import (
     format_log_data,
@@ -17,23 +16,11 @@ class Loguru(LoggerInterface):
     Loguru library wrapper that inherits the LoggerInterface self variables and methods.
 
     This only support the 'log' and 'async_log' methods.
-
-    - self.counter: int = this is used to track the number of log or async_log calls.
-
-    - self.logger: loguru.Logger = this is the Loguru library logger instance.
-
-    - self.logger.add("logs/logfile.log") = this auto creates the log folder and logfile.log inside it.
-                                            auto creation happens when the logger is initialized,
-                                            or when unit tests are run.
     """
 
     def __init__(self, **kwargs) -> None:
         """Initialize LoggerInterface, self variables and loguru library."""
         super().__init__(**kwargs)
-
-        self.counter: int = 0
-        self.logger: loguru.Logger = logger
-        self.logger.add("logs/logfile.log")
 
     def log(
         self,
@@ -58,22 +45,22 @@ class Loguru(LoggerInterface):
             _reduce_stack_level,
         )
         if _level == LogLevels.INFO.value:
-            self.logger.info(data)
+            logger.info(data)
         elif _level == LogLevels.DEBUG.value:
-            self.logger.debug(data)
+            logger.debug(data)
         elif _level == LogLevels.WARNING.value:
-            self.logger.warning(data)
+            logger.warning(data)
         elif _level == LogLevels.ERROR.value:
-            self.logger.error(data)
+            logger.error(data)
         elif _level == LogLevels.CRITICAL.value:
-            self.logger.critical(data)
+            logger.critical(data)
         elif _level == LogLevels.EXCEPTION.value:
-            self.logger.exception(data)
+            logger.exception(data)
         else:
             check_log_level_value(level)
 
-        self.counter += 1
-        self.logger.info(f"Total logs count: {self.counter}")
+        logcounter.increment()
+        logger.info(f"Total logs count: {logcounter.counter}")
 
     async def async_log(
         self,
